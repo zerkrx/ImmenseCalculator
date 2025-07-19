@@ -41,20 +41,19 @@
 ## 🚀 Getting Started
 
 1. **Head over to releases on the right hand side!**
-   Download the latest version's installer and run it, it should automatically install to your device and set a desktop icon for you to use.
+- Download the latest version's installer and run it, it should automatically install to your device and set a desktop icon for you to use.
 
 2. **Run the Program**
-Launch the executable to begin creating or loading menus.
+- Launch the executable to begin creating or loading menus.
 
 3. **Start Building**
+- Use the editor to create items, categories, combo meals, and discounts.
+- Save, load, and manage different menus.
+- Calculate order totals during roleplay sessions.
 
-Use the editor to create items, categories, combo meals, and discounts.
+---
 
-Save, load, and manage different menus.
-
-Calculate order totals during roleplay sessions.
-
-
+## 📸 Photos
 <img width="502" height="412" alt="image" src="https://github.com/user-attachments/assets/21ac11b7-a60a-42e9-a92c-ec7c78d92463" />
 
 <img width="1102" height="812" alt="image" src="https://github.com/user-attachments/assets/f5c6fafe-aa92-4852-9ecc-2f91e11a8955" />
