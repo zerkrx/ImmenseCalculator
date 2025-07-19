@@ -9,6 +9,7 @@ from style_helper import apply_default_style
 import colors
 import colorsys
 import updater
+import threading
 
 APP_VERSION = "v1.1.0" 
 
@@ -72,7 +73,7 @@ class LandingPage:
         btn_delete.grid(row=4, column=1, padx=8, pady=5, sticky="ew")
 
         # update
-        btn_update = ttk.Button(main_frame, text="Check for Updates", command=self.check_updates)
+        btn_update = ttk.Button(main_frame, text="Check for Updates", command=self.on_check_updates_clicked)
         btn_update.grid(row=5, column=0, columnspan=2, padx=8, pady=5, sticky="ew")
 
         # Configure grid column weight for even stretching
@@ -122,12 +123,26 @@ class LandingPage:
         self.latest_selected_estab = self.establishments[0]
 
 
-    def check_updates(self):
-        repo_path = os.path.abspath(os.path.dirname(__file__))  # Assuming the repo root is this folder
-        updated = updater.check_for_updates(repo_path)
-        if updated:
-            # Optionally, auto restart or close to prompt user
-            self.root.destroy()
+    def on_check_updates_clicked(self):
+        # Run the update check in a background thread to avoid blocking UI
+        threading.Thread(target=self._check_updates_thread, daemon=True).start()
+
+    def _check_updates_thread(self):
+        upd = updater.Updater(self.root)
+        success = upd.fetch_latest_release_info()
+
+        def show_message(msg):
+            self.root.after(0, lambda: messagebox.showinfo("Update", msg))
+
+        if not success:
+            show_message("Could not check for updates at this time.")
+            return
+
+        if upd.is_update_available():
+            # Prompt update dialog must be called in main thread
+            self.root.after(0, upd.prompt_update)
+        else:
+            show_message("No updates available. You have the latest version.")
 
     def animate_rainbow_text(self):
         import colorsys
