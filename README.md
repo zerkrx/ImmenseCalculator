@@ -2,6 +2,10 @@
 
 **ImmenseCalculator** is a powerful Point of Sale (POS) and menu-building application designed for the immersive world of **Immense RP** (FiveM). It allows players and staff to create detailed menus for any in-game establishment and quickly calculate customer orders during roleplay.
 
+
+---
+- as of 7/19/2025 I have no menus posted to go with the program, so you will have to make them yourself. I will upload and share some when i get around to it. 
+
 ---
 
 ## 🔧 Features
