@@ -8,9 +8,10 @@ import requests
 import tkinter as tk
 from tkinter import messagebox
 from packaging import version  # require `pip install packaging`
+from version import APP_VERSION
 
 # Current app version - keep this in sync with your releases
-APP_VERSION = "1.1.0"
+APP_VERSION = "1.2.0"
 
 # GitHub repo info
 GITHUB_USER = "zerkrx"

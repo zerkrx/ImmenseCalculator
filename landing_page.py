@@ -10,8 +10,8 @@ import colors
 import colorsys
 import updater
 import threading
+from version import APP_VERSION
 
-APP_VERSION = "v1.1.0" 
 
 
 class LandingPage:
